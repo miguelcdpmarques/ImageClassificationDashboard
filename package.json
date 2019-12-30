@@ -2,6 +2,9 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.14.2"
+  },
   "scripts": {
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
     "serve": "vue-cli-service serve",

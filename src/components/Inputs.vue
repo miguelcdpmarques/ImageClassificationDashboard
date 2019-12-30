@@ -50,7 +50,7 @@ export default {
         let formData = new FormData()
         let uploadFile = this.dropFile
         formData.append('photo', uploadFile)
-        axios.post('http://127.0.0.1:5000/model', formData, config)
+        axios.post('https://dl-image-classification-api.herokuapp.com/model', formData, config)
           .then((response) => {
             console.log(response.data)
             this.fruitName = response.data.fruitName
