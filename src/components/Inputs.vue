@@ -36,6 +36,12 @@ export default {
       dropFile: null
     }
   },
+  mounted () {
+    axios.get('https://dl-image-classification-api.herokuapp.com/')
+      .then((response) => {
+        console.log('Started Application.')
+      })
+  },
   methods: {
     deleteDropFile () {
       this.dropFile = null
@@ -54,10 +60,8 @@ export default {
           .then((response) => {
             console.log(response.data)
             this.fruitName = response.data.fruitName
-            this.predictionConfidence = response.data.predictionConfidence
             this.$emit('prediction', {
-              'fruitName': this.fruitName,
-              'predictionConfidence': this.predictionConfidence
+              'fruitName': this.fruitName
             })
           })
       } else {

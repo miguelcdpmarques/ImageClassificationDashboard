@@ -4,7 +4,7 @@
       <inputs @prediction="updatePrediction"></inputs>
     </div>
     <div class="column output-section">
-      <outputs :fruitName="fruitName" :predictionConfidence="predictionConfidence"></outputs>
+      <outputs :fruitName="fruitName"></outputs>
     </div>
   </div>
 </template>
@@ -21,16 +21,13 @@ export default {
   },
   data () {
     return {
-      fruitName: '',
-      predictionConfidence: null
+      fruitName: ''
     }
   },
   methods: {
     updatePrediction (value) {
       this.fruitName = value.fruitName
       console.log('New class: ', this.fruitName)
-      this.predictionConfidence = value.predictionConfidence
-      console.log('New proba: ', this.predictionConfidence)
     }
   }
 }
